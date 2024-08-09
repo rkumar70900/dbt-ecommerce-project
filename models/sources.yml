@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: ecommerce_database
+    database: ecommerce_database  
+    schema: ecommerce_database  
+    tables:
+      - name: orders
+      - name: customers
