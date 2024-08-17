@@ -6,10 +6,10 @@ with dt_orders as (
 select
     orderId,
     customerId,
-    convert(orderStatus, char) as orderStatus,
-    convert(purchaseAt, date) as purchaseAt,
-    convert(approvedAt, date) as approvedAt,
-    convert(carrierDelivery, date) as carrierDelivery,
-    convert(customerDelivery, date) as customerDelivery,
-    convert(estimatedDelivery, date) as estimatedDelivery
+    STR_TO_DATE(orderStatus,'%Y-%m-%d %H:%i:%s') as orderStatus,
+    STR_TO_DATE(purchaseAt,'%Y-%m-%d %H:%i:%s') as purchaseAt,
+    STR_TO_DATE(approvedAt,'%Y-%m-%d %H:%i:%s') as approvedAt,
+    STR_TO_DATE(carrierDelivery,'%Y-%m-%d %H:%i:%s') as carrierDelivery,
+    STR_TO_DATE(customerDelivery,'%Y-%m-%d %H:%i:%s') as customerDelivery,
+    STR_TO_DATE(estimatedDelivery,'%Y-%m-%d %H:%i:%s') as estimatedDelivery
 from dt_orders
