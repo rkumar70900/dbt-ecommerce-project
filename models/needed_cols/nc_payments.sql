@@ -1,6 +1,6 @@
 with nc_payments as (
     select *
-    from {{ ref('src_payments') }}
+    from {{ source('ecommerce_database', 'payments') }}
 )
 
 select

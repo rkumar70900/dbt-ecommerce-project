@@ -1,5 +1,5 @@
 with nc_orders as (
-    select * from {{ ref('src_orders') }}
+    select * from {{ source('ecommerce_database', 'orders') }}
 )
 
 select

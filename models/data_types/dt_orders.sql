@@ -6,7 +6,7 @@ with dt_orders as (
 select
     orderId,
     customerId,
-    STR_TO_DATE(orderStatus,'%Y-%m-%d %H:%i:%s') as orderStatus,
+    orderStatus,
     STR_TO_DATE(purchaseAt,'%Y-%m-%d %H:%i:%s') as purchaseAt,
     STR_TO_DATE(approvedAt,'%Y-%m-%d %H:%i:%s') as approvedAt,
     STR_TO_DATE(carrierDelivery,'%Y-%m-%d %H:%i:%s') as carrierDelivery,

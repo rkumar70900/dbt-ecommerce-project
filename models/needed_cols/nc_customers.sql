@@ -1,7 +1,7 @@
 
 with nc_customers as (
     select * 
-    from {{ ref('src_customers') }}
+    from {{ source('ecommerce_database', 'customers') }}
 )
 
 select
