@@ -7,3 +7,8 @@ sources:
     tables:
       - name: orders
       - name: customers
+      - name: order_items
+      - name: payments
+      - name: sellers
+      - name: reviews
+      - name: products

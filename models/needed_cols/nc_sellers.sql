@@ -1,6 +1,6 @@
 with nc_sellers as (
     select *
-    from {{ ref('src_sellers') }}
+    from {{ source('ecommerce_database', 'sellers') }}
 )
 
 select

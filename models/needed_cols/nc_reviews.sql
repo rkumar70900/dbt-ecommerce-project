@@ -1,6 +1,6 @@
 with nc_reviews as (
     select *
-    from {{ ref('src_reviews') }}
+    from {{ source('ecommerce_database', 'reviews') }}
 )
 
 select

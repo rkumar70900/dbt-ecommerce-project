@@ -1,6 +1,6 @@
 with nc_orderitems as (
     select *
-    from {{ ref('src_orderitems') }}
+    from {{ source('ecommerce_database', 'order_items') }}
 )
 
 select
