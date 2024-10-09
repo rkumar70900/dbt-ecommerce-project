@@ -1,3 +1,8 @@
+"""
+The query uses a Common Table Expression (CTE) called RankedCategories to rank product categories by their total orders per month and year. The ranking is done using the ROW_NUMBER() function, which assigns a unique number to each row within each group defined by the PARTITION BY clause.
+
+The main query then selects the top-ranked category for each month-year combination (i.e., the one with the lowest total orders) by filtering the results where rn = 1. The resulting data is ordered by year and month.
+"""
 WITH RankedCategories AS (
     SELECT
         monthly,

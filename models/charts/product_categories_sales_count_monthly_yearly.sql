@@ -1,3 +1,8 @@
+"""
+The query uses three Common Table Expressions (CTEs) called orders, products, and orderItems to select data from the dt_orders, dt_products, and nc_orderitems tables, respectively. 
+The main query then joins these CTEs based on order ID and product ID, and groups the results by product category, month, and year. Finally, it calculates the total count of orders for each group.
+"""
+
 with orders as (
     select * 
     from {{ ref('dt_orders') }}
