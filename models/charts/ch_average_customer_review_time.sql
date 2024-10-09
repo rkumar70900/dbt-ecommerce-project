@@ -9,7 +9,7 @@ reviews as (
 )
 
 select
-    avg(datediff(reviews.reviewDate, orders.customerDelivery)) as averageResponseTime
+    avg(datediff(reviews.reviewCreatedAt, orders.customerDelivery)) as averageResponseTime
 from orders join reviews on orders.orderId = reviews.orderId
-where reviews.reviewDate > orders.customerDelivery
+where reviews.reviewCreatedAt > orders.customerDelivery
 and orders.orderStatus = 'Delivered'

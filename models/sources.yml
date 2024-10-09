@@ -12,3 +12,4 @@ sources:
       - name: sellers
       - name: reviews
       - name: products
+      - name: run_log
