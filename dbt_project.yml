@@ -12,11 +12,16 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-target-path: "target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
+target-path: "target" 
+clean-targets:        
   - "target"
   - "dbt_packages"
 
+on-run-start:
+  - "insert into {{ source('ecommerce_database', 'run_log') }} (start_time, status_check) values (current_timestamp, 'started');"
+
+on-run-end:
+  - "insert into {{ source('ecommerce_database', 'run_log') }} (start_time, status_check) values (current_timestamp, 'completed');"
 
 seeds:
   product_category_name_translation:

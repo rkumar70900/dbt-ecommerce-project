@@ -10,5 +10,5 @@ orders as (
 
 select reviews.reviewId as reviewId, orders.orderId as orderId
 from orders join reviews on orders.orderId = reviews.orderId
-where reviews.reviewDate < orders.customerDelivery
+where reviews.reviewCreatedAt < orders.customerDelivery
 and orders.orderStatus = 'delivered'
